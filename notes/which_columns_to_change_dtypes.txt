@@ -1,0 +1,11 @@
+0   geo_level_1_id, int
+ 1   geo_level_2_id,
+
+land_surface_condition - categorical (but object)
+
+# 7-13 inclusive are all object and need to be changed to categorical
+# 14-24 inclusive (has_) are all int and need to be changed to binary
+# 25 object --> category
+# 27-37 (has_) all int --> binary
+
+Are the categories ordered??
