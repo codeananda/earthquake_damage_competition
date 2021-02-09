@@ -25,6 +25,7 @@ lgbm_02_08 val score (on X_val): 0.785823090966174
 lgbm_02_08 submission score:     0.7335 
 """
 
+# This only works if used with pd.get_dummies() (see last element in list)
 top_14_features = ['geo_level_1_id', 'geo_level_2_id', 'geo_level_3_id', 
                     'count_floors_pre_eq', 'age'	, 'area_percentage'	, 
                     'height_percentage', 
