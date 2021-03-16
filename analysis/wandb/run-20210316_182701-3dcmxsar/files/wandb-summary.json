@@ -1,0 +1,1 @@
+{"train_multi_logloss": 0.6050799902858014, "train_multi_error": 0.30373511255222296, "train_f1": 0.696264887447777, "val_multi_logloss": 0.6092727653840732, "val_multi_error": 0.3066768994627782, "val_f1": 0.6933231005372218, "_runtime": 315, "_timestamp": 1615912342, "_step": 174}
