@@ -1,0 +1,625 @@
+diff --git a/analysis/bagging.ipynb b/analysis/bagging.ipynb
+index f4f476f..ff691e6 100644
+--- a/analysis/bagging.ipynb
++++ b/analysis/bagging.ipynb
+@@ -54,8 +54,8 @@
+    "id": "anonymous-savannah",
+    "metadata": {
+     "ExecuteTime": {
+-     "end_time": "2021-03-12T06:38:16.941068Z",
+-     "start_time": "2021-03-12T06:38:14.640104Z"
++     "end_time": "2021-03-15T15:24:07.314289Z",
++     "start_time": "2021-03-15T15:24:04.121919Z"
+     },
+     "executionInfo": {
+      "elapsed": 2001,
+@@ -104,6 +104,21 @@
+     "y = pd.read_csv(DOWNLOAD_DIR / 'train_labels.csv', index_col='building_id')"
+    ]
+   },
++  {
++   "cell_type": "code",
++   "execution_count": 2,
++   "id": "boxed-upper",
++   "metadata": {
++    "ExecuteTime": {
++     "end_time": "2021-03-15T15:24:07.512273Z",
++     "start_time": "2021-03-15T15:24:07.509191Z"
++    }
++   },
++   "outputs": [],
++   "source": [
++    "sns.set()"
++   ]
++  },
+   {
+    "cell_type": "markdown",
+    "id": "ON0gpfeJcjAo",
+@@ -525,12 +540,12 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": null,
++   "execution_count": 3,
+    "id": "determined-library",
+    "metadata": {
+     "ExecuteTime": {
+-     "end_time": "2021-03-11T16:46:32.957425Z",
+-     "start_time": "2021-03-11T16:46:31.474970Z"
++     "end_time": "2021-03-15T15:24:13.810793Z",
++     "start_time": "2021-03-15T15:24:12.232620Z"
+     },
+     "id": "determined-library",
+     "outputId": "420f632a-92fb-4c29-c91a-826eaa443af9",
+@@ -550,10 +565,8 @@
+        "True"
+       ]
+      },
+-     "execution_count": 2,
+-     "metadata": {
+-      "tags": []
+-     },
++     "execution_count": 3,
++     "metadata": {},
+      "output_type": "execute_result"
+     }
+    ],
+@@ -564,12 +577,12 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": null,
++   "execution_count": 4,
+    "id": "unexpected-desire",
+    "metadata": {
+     "ExecuteTime": {
+-     "end_time": "2021-03-09T10:55:48.232889Z",
+-     "start_time": "2021-03-09T10:55:37.445894Z"
++     "end_time": "2021-03-15T15:24:19.469825Z",
++     "start_time": "2021-03-15T15:24:13.987249Z"
+     },
+     "id": "unexpected-desire",
+     "outputId": "48422de5-4bf7-46b4-8c37-24cf6c495ea7"
+@@ -579,7 +592,7 @@
+      "name": "stderr",
+      "output_type": "stream",
+      "text": [
+-      "\u001b[34m\u001b[1mwandb\u001b[0m: wandb version 0.10.21 is available!  To upgrade, please run:\n",
++      "\u001b[34m\u001b[1mwandb\u001b[0m: wandb version 0.10.22 is available!  To upgrade, please run:\n",
+       "\u001b[34m\u001b[1mwandb\u001b[0m:  $ pip install wandb --upgrade\n"
+      ]
+     },
+@@ -588,49 +601,32 @@
+       "text/html": [
+        "\n",
+        "                Tracking run with wandb version 0.10.15<br/>\n",
+-       "                Syncing run <strong style=\"color:#cdcd00\">efficient-mountain-1</strong> to <a href=\"https://wandb.ai\" target=\"_blank\">Weights & Biases</a> <a href=\"https://docs.wandb.com/integrations/jupyter.html\" target=\"_blank\">(Documentation)</a>.<br/>\n",
++       "                Syncing run <strong style=\"color:#cdcd00\">jumping-resonance-3</strong> to <a href=\"https://wandb.ai\" target=\"_blank\">Weights & Biases</a> <a href=\"https://docs.wandb.com/integrations/jupyter.html\" target=\"_blank\">(Documentation)</a>.<br/>\n",
+        "                Project page: <a href=\"https://wandb.ai/theadammurphy/earthquake_damage_competition\" target=\"_blank\">https://wandb.ai/theadammurphy/earthquake_damage_competition</a><br/>\n",
+-       "                Run page: <a href=\"https://wandb.ai/theadammurphy/earthquake_damage_competition/runs/2ol1e3kn\" target=\"_blank\">https://wandb.ai/theadammurphy/earthquake_damage_competition/runs/2ol1e3kn</a><br/>\n",
+-       "                Run data is saved locally in <code>/Users/king/Google Drive/Work/Delivery/Current/earthquake_damage_competition/analysis/wandb/run-20210309_125537-2ol1e3kn</code><br/><br/>\n",
++       "                Run page: <a href=\"https://wandb.ai/theadammurphy/earthquake_damage_competition/runs/2xrnubhb\" target=\"_blank\">https://wandb.ai/theadammurphy/earthquake_damage_competition/runs/2xrnubhb</a><br/>\n",
++       "                Run data is saved locally in <code>/Users/king/Google Drive/Work/Delivery/Current/earthquake_damage_competition/analysis/wandb/run-20210315_172413-2xrnubhb</code><br/><br/>\n",
+        "            "
+       ],
+       "text/plain": [
+        "<IPython.core.display.HTML object>"
+       ]
+      },
+-     "metadata": {
+-      "tags": []
+-     },
++     "metadata": {},
+      "output_type": "display_data"
+-    },
+-    {
+-     "data": {
+-      "text/html": [
+-       "<h1>Run(2ol1e3kn)</h1><iframe src=\"https://wandb.ai/theadammurphy/earthquake_damage_competition/runs/2ol1e3kn\" style=\"border:none;width:100%;height:400px\"></iframe>"
+-      ],
+-      "text/plain": [
+-       "<wandb.sdk.wandb_run.Run at 0x1351fafd0>"
+-      ]
+-     },
+-     "execution_count": 3,
+-     "metadata": {
+-      "tags": []
+-     },
+-     "output_type": "execute_result"
+     }
+    ],
+    "source": [
+-    "wandb.init(project='earthquake_damage_competition')"
++    "run = wandb.init(project='earthquake_damage_competition')"
+    ]
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 15,
++   "execution_count": 5,
+    "id": "documentary-victoria",
+    "metadata": {
+     "ExecuteTime": {
+-     "end_time": "2021-03-12T06:26:31.169308Z",
+-     "start_time": "2021-03-12T06:26:31.154661Z"
++     "end_time": "2021-03-15T15:24:19.676054Z",
++     "start_time": "2021-03-15T15:24:19.671433Z"
+     },
+     "id": "documentary-victoria",
+     "outputId": "023863ce-fc30-4800-bff8-17a5b793b0d8"
+@@ -642,7 +638,7 @@
+        "(86868, 38)"
+       ]
+      },
+-     "execution_count": 15,
++     "execution_count": 5,
+      "metadata": {},
+      "output_type": "execute_result"
+     }
+@@ -653,12 +649,12 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 2,
++   "execution_count": 6,
+    "id": "stock-companion",
+    "metadata": {
+     "ExecuteTime": {
+-     "end_time": "2021-03-12T06:38:25.810617Z",
+-     "start_time": "2021-03-12T06:38:25.801128Z"
++     "end_time": "2021-03-15T15:24:19.818633Z",
++     "start_time": "2021-03-15T15:24:19.804052Z"
+     },
+     "executionInfo": {
+      "elapsed": 587,
+@@ -686,12 +682,12 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 3,
++   "execution_count": 7,
+    "id": "brief-karma",
+    "metadata": {
+     "ExecuteTime": {
+-     "end_time": "2021-03-12T06:38:26.661700Z",
+-     "start_time": "2021-03-12T06:38:26.245510Z"
++     "end_time": "2021-03-15T15:24:20.494575Z",
++     "start_time": "2021-03-15T15:24:19.962861Z"
+     },
+     "executionInfo": {
+      "elapsed": 830,
+@@ -714,12 +710,12 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 4,
++   "execution_count": 8,
+    "id": "possible-neighbor",
+    "metadata": {
+     "ExecuteTime": {
+-     "end_time": "2021-03-12T06:38:26.890245Z",
+-     "start_time": "2021-03-12T06:38:26.853798Z"
++     "end_time": "2021-03-15T15:24:20.704068Z",
++     "start_time": "2021-03-15T15:24:20.663235Z"
+     },
+     "executionInfo": {
+      "elapsed": 517,
+@@ -745,12 +741,12 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 5,
++   "execution_count": 9,
+    "id": "confidential-elimination",
+    "metadata": {
+     "ExecuteTime": {
+-     "end_time": "2021-03-12T06:38:27.143251Z",
+-     "start_time": "2021-03-12T06:38:27.140456Z"
++     "end_time": "2021-03-15T15:24:20.862876Z",
++     "start_time": "2021-03-15T15:24:20.859200Z"
+     },
+     "executionInfo": {
+      "elapsed": 559,
+@@ -773,12 +769,12 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 6,
++   "execution_count": 10,
+    "id": "adaptive-dietary",
+    "metadata": {
+     "ExecuteTime": {
+-     "end_time": "2021-03-12T06:38:28.123131Z",
+-     "start_time": "2021-03-12T06:38:28.120267Z"
++     "end_time": "2021-03-15T15:24:23.530270Z",
++     "start_time": "2021-03-15T15:24:23.527237Z"
+     },
+     "executionInfo": {
+      "elapsed": 414,
+@@ -803,12 +799,12 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 7,
++   "execution_count": 11,
+    "id": "judicial-error",
+    "metadata": {
+     "ExecuteTime": {
+-     "end_time": "2021-03-12T06:38:29.064999Z",
+-     "start_time": "2021-03-12T06:38:29.059736Z"
++     "end_time": "2021-03-15T15:24:24.063026Z",
++     "start_time": "2021-03-15T15:24:24.056677Z"
+     },
+     "executionInfo": {
+      "elapsed": 569,
+@@ -859,7 +855,7 @@
+     "    \"\"\"\n",
+     "    # Does not work for binary classification, preds has a different form\n",
+     "    # in that case\n",
+-    "    assert num_classs > 2\n",
++    "    assert num_class > 2\n",
+     "    \n",
+     "    preds_for_ith_row = [preds[class_label * num_data + i]\n",
+     "                        for class_label in range(num_class)]\n",
+@@ -1641,7 +1637,8 @@
+      "user_tz": -120
+     },
+     "id": "entertaining-mathematics",
+-    "outputId": "5fc9f5a6-2a7e-47a7-eacc-3e13f4277639"
++    "outputId": "5fc9f5a6-2a7e-47a7-eacc-3e13f4277639",
++    "scrolled": true
+    },
+    "outputs": [
+     {
+@@ -2080,24 +2077,337 @@
+    ]
+   },
+   {
+-   "cell_type": "code",
+-   "execution_count": null,
+-   "id": "addressed-discovery",
++   "cell_type": "markdown",
++   "id": "forward-solid",
+    "metadata": {
+     "id": "addressed-discovery"
+    },
++   "source": [
++    "## Validating Bagged Models\n",
++    "\n",
++    "Let's build one model first and see how we can interact with it. I want to get some plots to see how we can use validation data. But using the LGBM API is SO MUCH BETTER than using the sklearn API for LightGBM, so let's play with this and see what happens."
++   ]
++  },
++  {
++   "cell_type": "code",
++   "execution_count": 18,
++   "id": "imposed-international",
++   "metadata": {
++    "ExecuteTime": {
++     "end_time": "2021-03-15T15:29:27.764067Z",
++     "start_time": "2021-03-15T15:29:27.580717Z"
++    }
++   },
+    "outputs": [],
+-   "source": []
++   "source": [
++    "from sklearn.model_selection import train_test_split\n",
++    "\n",
++    "X_train, X_val, y_train, y_val = train_test_split(X_all_ints, y, test_size=0.25,\n",
++    "                                                 random_state=42, stratify=y)\n",
++    "\n",
++    "full_train_data = lgb.Dataset(X_all_ints,\n",
++    "                             label=y,\n",
++    "                             feature_name=list(cols_ordered_after_ordinal_encoding),\n",
++    "                             categorical_feature=list(cat_cols_plus_geo),\n",
++    "                             free_raw_data=False)\n",
++    "\n",
++    "train_data = lgb.Dataset(X_train,\n",
++    "                        label=y_train,\n",
++    "                        feature_name=list(cols_ordered_after_ordinal_encoding),\n",
++    "                        categorical_feature=list(cat_cols_plus_geo),\n",
++    "                        free_raw_data=False)\n",
++    "\n",
++    "val_data = lgb.Dataset(X_val,\n",
++    "                      label=y_val,\n",
++    "                      feature_name=list(cols_ordered_after_ordinal_encoding),\n",
++    "                      categorical_feature=list(cat_cols_plus_geo),\n",
++    "                      free_raw_data=False)"
++   ]
++  },
++  {
++   "cell_type": "markdown",
++   "id": "devoted-pipeline",
++   "metadata": {},
++   "source": [
++    "### DO I NEED TO SET CATEGORICAL_FEATURE AND FEATURE_NAME IN LGB.TRAIN IF I HAVE SET THEM IN THE LGB.DATASET OBJECT?"
++   ]
++  },
++  {
++   "cell_type": "code",
++   "execution_count": 45,
++   "id": "moved-jones",
++   "metadata": {
++    "ExecuteTime": {
++     "end_time": "2021-03-15T15:45:52.908406Z",
++     "start_time": "2021-03-15T15:45:42.104465Z"
++    },
++    "scrolled": true
++   },
++   "outputs": [
++    {
++     "data": {
++      "text/html": [
++       "Finishing last run (ID:27n9do9f) before initializing another..."
++      ],
++      "text/plain": [
++       "<IPython.core.display.HTML object>"
++      ]
++     },
++     "metadata": {},
++     "output_type": "display_data"
++    },
++    {
++     "data": {
++      "text/html": [
++       "<br/>Waiting for W&B process to finish, PID 21399<br/>Program ended successfully."
++      ],
++      "text/plain": [
++       "<IPython.core.display.HTML object>"
++      ]
++     },
++     "metadata": {},
++     "output_type": "display_data"
++    },
++    {
++     "data": {
++      "application/vnd.jupyter.widget-view+json": {
++       "model_id": "",
++       "version_major": 2,
++       "version_minor": 0
++      },
++      "text/plain": [
++       "VBox(children=(Label(value=' 1.87MB of 1.87MB uploaded (0.00MB deduped)\\r'), FloatProgress(value=1.0, max=1.0)…"
++      ]
++     },
++     "metadata": {},
++     "output_type": "display_data"
++    },
++    {
++     "data": {
++      "text/html": [
++       "Find user logs for this run at: <code>/Users/king/Google Drive/Work/Delivery/Current/earthquake_damage_competition/analysis/wandb/run-20210315_174438-27n9do9f/logs/debug.log</code>"
++      ],
++      "text/plain": [
++       "<IPython.core.display.HTML object>"
++      ]
++     },
++     "metadata": {},
++     "output_type": "display_data"
++    },
++    {
++     "data": {
++      "text/html": [
++       "Find internal logs for this run at: <code>/Users/king/Google Drive/Work/Delivery/Current/earthquake_damage_competition/analysis/wandb/run-20210315_174438-27n9do9f/logs/debug-internal.log</code>"
++      ],
++      "text/plain": [
++       "<IPython.core.display.HTML object>"
++      ]
++     },
++     "metadata": {},
++     "output_type": "display_data"
++    },
++    {
++     "data": {
++      "text/html": [
++       "<h3>Run summary:</h3><br/><style>\n",
++       "    table.wandb td:nth-child(1) { padding: 0 10px; text-align: right }\n",
++       "    </style><table class=\"wandb\">\n",
++       "<tr><td>train_multi_logloss</td><td>0.78638</td></tr><tr><td>train_multi_error</td><td>0.43109</td></tr><tr><td>train_f1</td><td>0.56891</td></tr><tr><td>val_multi_logloss</td><td>0.7918</td></tr><tr><td>val_multi_error</td><td>0.43109</td></tr><tr><td>val_f1</td><td>0.56891</td></tr><tr><td>_step</td><td>14</td></tr><tr><td>_runtime</td><td>36</td></tr><tr><td>_timestamp</td><td>1615823120</td></tr></table>"
++      ],
++      "text/plain": [
++       "<IPython.core.display.HTML object>"
++      ]
++     },
++     "metadata": {},
++     "output_type": "display_data"
++    },
++    {
++     "data": {
++      "text/html": [
++       "<h3>Run history:</h3><br/><style>\n",
++       "    table.wandb td:nth-child(1) { padding: 0 10px; text-align: right }\n",
++       "    </style><table class=\"wandb\">\n",
++       "<tr><td>train_multi_logloss</td><td>█▇▇▆▆▅▄▄▄▃▃▂▂▁▁</td></tr><tr><td>train_multi_error</td><td>▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁</td></tr><tr><td>train_f1</td><td>▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁</td></tr><tr><td>val_multi_logloss</td><td>█▇▇▆▆▅▄▄▄▃▃▂▂▁▁</td></tr><tr><td>val_multi_error</td><td>▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁</td></tr><tr><td>val_f1</td><td>▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁</td></tr><tr><td>_step</td><td>▁▁▂▃▃▃▄▅▅▅▆▇▇▇█</td></tr><tr><td>_runtime</td><td>▁▁▂▃▃▃▄▅▅▅▆▇▇▇█</td></tr><tr><td>_timestamp</td><td>▁▁▂▃▃▃▄▅▅▅▆▇▇▇█</td></tr></table><br/>"
++      ],
++      "text/plain": [
++       "<IPython.core.display.HTML object>"
++      ]
++     },
++     "metadata": {},
++     "output_type": "display_data"
++    },
++    {
++     "data": {
++      "text/html": [
++       "Synced 6 W&B file(s), 0 media file(s), 0 artifact file(s) and 1 other file(s)"
++      ],
++      "text/plain": [
++       "<IPython.core.display.HTML object>"
++      ]
++     },
++     "metadata": {},
++     "output_type": "display_data"
++    },
++    {
++     "data": {
++      "text/html": [
++       "\n",
++       "                    <br/>Synced <strong style=\"color:#cdcd00\">wobbly-violet-8</strong>: <a href=\"https://wandb.ai/theadammurphy/earthquake_damage_competition/runs/27n9do9f\" target=\"_blank\">https://wandb.ai/theadammurphy/earthquake_damage_competition/runs/27n9do9f</a><br/>\n",
++       "                "
++      ],
++      "text/plain": [
++       "<IPython.core.display.HTML object>"
++      ]
++     },
++     "metadata": {},
++     "output_type": "display_data"
++    },
++    {
++     "data": {
++      "text/html": [
++       "...Successfully finished last run (ID:27n9do9f). Initializing new run:<br/><br/>"
++      ],
++      "text/plain": [
++       "<IPython.core.display.HTML object>"
++      ]
++     },
++     "metadata": {},
++     "output_type": "display_data"
++    },
++    {
++     "name": "stderr",
++     "output_type": "stream",
++     "text": [
++      "\u001b[34m\u001b[1mwandb\u001b[0m: wandb version 0.10.22 is available!  To upgrade, please run:\n",
++      "\u001b[34m\u001b[1mwandb\u001b[0m:  $ pip install wandb --upgrade\n"
++     ]
++    },
++    {
++     "data": {
++      "text/html": [
++       "\n",
++       "                Tracking run with wandb version 0.10.15<br/>\n",
++       "                Syncing run <strong style=\"color:#cdcd00\">swept-sun-9</strong> to <a href=\"https://wandb.ai\" target=\"_blank\">Weights & Biases</a> <a href=\"https://docs.wandb.com/integrations/jupyter.html\" target=\"_blank\">(Documentation)</a>.<br/>\n",
++       "                Project page: <a href=\"https://wandb.ai/theadammurphy/earthquake_damage_competition\" target=\"_blank\">https://wandb.ai/theadammurphy/earthquake_damage_competition</a><br/>\n",
++       "                Run page: <a href=\"https://wandb.ai/theadammurphy/earthquake_damage_competition/runs/1o0xbdfs\" target=\"_blank\">https://wandb.ai/theadammurphy/earthquake_damage_competition/runs/1o0xbdfs</a><br/>\n",
++       "                Run data is saved locally in <code>/Users/king/Google Drive/Work/Delivery/Current/earthquake_damage_competition/analysis/wandb/run-20210315_174542-1o0xbdfs</code><br/><br/>\n",
++       "            "
++      ],
++      "text/plain": [
++       "<IPython.core.display.HTML object>"
++      ]
++     },
++     "metadata": {},
++     "output_type": "display_data"
++    }
++   ],
++   "source": [
++    "param = {'num_leaves': 120,\n",
++    "         'min_child_samples': 40,\n",
++    "         'learning_rate': 0.03,\n",
++    "         'num_boost_round': 40,\n",
++    "         'early_stopping_round': -1,\n",
++    "         'boosting_type': 'goss',\n",
++    "         'objective': 'multiclassova',\n",
++    "         'is_unbalance': True,\n",
++    "         'metric': ['multiclassova', 'multi_error'],\n",
++    "         'num_class': 3,\n",
++    "         'verbosity': -1,\n",
++    "         'num_threads': 8,\n",
++    "         'seed': 1}\n",
++    "\n",
++    "run = wandb.init(project='earthquake_damage_competition',\n",
++    "                 config=param)"
++   ]
++  },
++  {
++   "cell_type": "code",
++   "execution_count": null,
++   "id": "minor-peace",
++   "metadata": {
++    "ExecuteTime": {
++     "start_time": "2021-03-15T15:45:42.106Z"
++    },
++    "scrolled": true
++   },
++   "outputs": [
++    {
++     "name": "stdout",
++     "output_type": "stream",
++     "text": [
++      "[1]\ttrain's multi_logloss: 0.878332\ttrain's multi_error: 0.431087\ttrain's f1: 0.568913\tval's multi_logloss: 0.879566\tval's multi_error: 0.431091\tval's f1: 0.568909\n",
++      "[2]\ttrain's multi_logloss: 0.849732\ttrain's multi_error: 0.431087\ttrain's f1: 0.568913\tval's multi_logloss: 0.852089\tval's multi_error: 0.431091\tval's f1: 0.568909\n",
++      "[3]\ttrain's multi_logloss: 0.824889\ttrain's multi_error: 0.431087\ttrain's f1: 0.568913\tval's multi_logloss: 0.828344\tval's multi_error: 0.431091\tval's f1: 0.568909\n"
++     ]
++    }
++   ],
++   "source": [
++    "from wandb.lightgbm import wandb_callback\n",
++    "\n",
++    "evals_result = {}\n",
++    "booster = lgb.train(dict(wandb.config), # doesn't work if I pass wandb.config\n",
++    "                    train_data,\n",
++    "#                     100, # let's see if this works by setting it in param instead\n",
++    "                    # You can include train_data in the valid_set to easily\n",
++    "                    # make plots of the loss functions\n",
++    "                    valid_sets=[train_data, val_data],\n",
++    "                    valid_names=['train', 'val'],\n",
++    "                    evals_result=evals_result,\n",
++    "#                     early_stopping_rounds=None,\n",
++    "                    categorical_feature=list(cat_cols_plus_geo),\n",
++    "                    feval=lgb_f1_micro,\n",
++    "                    callbacks=[wandb_callback()])"
++   ]
+   },
+   {
+    "cell_type": "code",
+    "execution_count": null,
+    "id": "graduate-workstation",
+    "metadata": {
++    "ExecuteTime": {
++     "start_time": "2021-03-15T15:45:42.109Z"
++    },
+     "id": "graduate-workstation"
+    },
+    "outputs": [],
+-   "source": []
++   "source": [
++    "f1_plot = lgb.plot_metric(evals_result, metric='f1',\n",
++    "                          title='F1 (micro) score for validation and training')\n",
++    "wandb.log({'f1_score plot': wandb.Image(f1_plot)})\n",
++    "plt.show()"
++   ]
++  },
++  {
++   "cell_type": "code",
++   "execution_count": null,
++   "id": "figured-catch",
++   "metadata": {
++    "ExecuteTime": {
++     "start_time": "2021-03-15T15:45:42.110Z"
++    }
++   },
++   "outputs": [],
++   "source": [
++    "log_loss_plot = lgb.plot_metric(evals_result, metric='multi_logloss',\n",
++    "                title='Multi Log Loss for validation and training')\n",
++    "wandb.log({'multi logloss plot': wandb.Image(log_loss_plot)})"
++   ]
++  },
++  {
++   "cell_type": "code",
++   "execution_count": null,
++   "id": "commercial-objective",
++   "metadata": {
++    "ExecuteTime": {
++     "start_time": "2021-03-15T15:45:42.113Z"
++    }
++   },
++   "outputs": [],
++   "source": [
++    "multierror_plot = lgb.plot_metric(evals_result, metric='multi_error',\n",
++    "                title='Multi Error for validation and training')\n",
++    "wandb.log({'multi error plot': wandb.Image(multierror_plot)})"
++   ]
+   },
+   {
+    "cell_type": "code",
+diff --git a/analysis/wandb/latest-run b/analysis/wandb/latest-run
+index 8951ed4..7a3304f 120000
+--- a/analysis/wandb/latest-run
++++ b/analysis/wandb/latest-run
+@@ -1 +1 @@
+-run-20210309_125537-2ol1e3kn
+\ No newline at end of file
++run-20210315_174626-ic91gsob
+\ No newline at end of file

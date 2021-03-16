@@ -1,0 +1,24 @@
+{
+    "os": "Darwin-18.6.0-x86_64-i386-64bit",
+    "python": "3.7.9",
+    "heartbeatAt": "2021-03-15T15:50:44.110876",
+    "startedAt": "2021-03-15T15:50:36.011707",
+    "docker": null,
+    "cpu_count": 8,
+    "cuda": null,
+    "args": [
+        "-f",
+        "/Users/king/Library/Jupyter/runtime/kernel-922a84e9-8310-4ea4-bc85-848141140e4b.json"
+    ],
+    "state": "running",
+    "program": "<python with no main file>",
+    "git": {
+        "remote": "https://github.com/theadammurphy/earthquake_damage_competition.git",
+        "commit": "e2a8eecb48e44e0f27bf472b4b2532047ad7d740"
+    },
+    "email": "adsmurphy@hotmail.co.uk",
+    "root": "/Users/king/Google Drive/Work/Delivery/Current/earthquake_damage_competition",
+    "host": "Adams-MBP",
+    "username": "king",
+    "executable": "/Users/king/opt/anaconda3/envs/tabular/bin/python"
+}

@@ -1,0 +1,65 @@
+wandb_version: 1
+
+_wandb:
+  desc: null
+  value:
+    cli_version: 0.10.15
+    framework: lightgbm
+    is_jupyter_run: true
+    is_kaggle_kernel: false
+    python_version: 3.7.9
+    session_history: code/_session_history.ipynb
+    t:
+      1:
+      - 5
+      - 8
+      2:
+      - 5
+      - 8
+      3:
+      - 2
+      4: 3.7.9
+      5: 0.10.15
+      8:
+      - 1
+boosting_type:
+  desc: null
+  value: goss
+early_stopping_round:
+  desc: null
+  value: -1
+is_unbalance:
+  desc: null
+  value: true
+learning_rate:
+  desc: null
+  value: 0.03
+metric:
+  desc: null
+  value:
+  - multiclassova
+  - multi_error
+min_child_samples:
+  desc: null
+  value: 40
+num_boost_round:
+  desc: null
+  value: 40
+num_class:
+  desc: null
+  value: 3
+num_leaves:
+  desc: null
+  value: 120
+num_threads:
+  desc: null
+  value: 8
+objective:
+  desc: null
+  value: multiclassova
+seed:
+  desc: null
+  value: 1
+verbosity:
+  desc: null
+  value: -1
