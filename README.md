@@ -11,8 +11,7 @@ As of 01/09/21 my best submission ranks 151 / 4593 - the top 3.5% of all submiss
 
 ## Libraries Used
 
-For this project, the main libraries I used were:
-* Python
+For this project, I used Python and the following libraries:
 * Numpy
 * Pandas
 * Matplotlib
