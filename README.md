@@ -3,7 +3,7 @@ My entries to Driven Data's tabular ML competition [Richter's Predictor: Modelin
 
 The code is presented as-is. In the near future, I will tidy it up and turn it into a well-written portfolio project meant for an external audience. In the meantime, here is the code and submission files.
 
-## Best Score
+## Best Score
 
 As of 01/09/21 my best submission ranks 151 / 4593 - the top 3.5% of all submissions. This was achieved by bagging many LightGBM models together.
 
