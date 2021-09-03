@@ -7,6 +7,8 @@ As of 01/09/21 my best submission ranks 151 / 4593 - the top 3.5% of all submiss
 
 <img width="825" alt="Screenshot 2021-09-01 at 16 52 21" src="https://user-images.githubusercontent.com/51246969/131694136-db008dd5-4999-45ef-ab8e-369995f73ab2.png">
 
+Note: 0/3 subs made refers to the number of submissions I am allowed to make each day.
+
 # Review
 
 I completed this project alongside a mentor to demonstrate my data science and machine learning skills. He paid me for it and left the following ⭐⭐⭐⭐⭐ review about working with me:
