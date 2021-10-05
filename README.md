@@ -30,3 +30,4 @@ For this project, I used Python and the following libraries:
 * Seaborn
 * Scikit-learn
 * LightGBM
+* H2O.ai
