@@ -1,7 +1,10 @@
 # Driven Data - Earthquake Damage Competition - Tabular Data
+
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+
 My entries to Driven Data's tabular ML competition [Richter's Predictor: Modeling Earthquake Damage](https://www.drivendata.org/competitions/57/nepal-earthquake/).
 
-# Best Score (So Far)
+# Best Score (So Far...)
 
 As of 01/09/21 my best submission ranks 151 / 4593 - the top 3.5% of all submissions. This was achieved by bagging many LightGBM models together.
 
